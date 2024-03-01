@@ -34,7 +34,7 @@ class ProjectAgent:
         self.epsilon_step = (self.epsilon_max-self.epsilon_min)/1000
         self.gamma = 0.95
         self.tau = 0.005
-        self.path = "src/policy_network.pth"
+        self.path = "policy_network.pth"
         
         self.criterion = torch.nn.MSELoss()
         self.batch_size = 32
@@ -66,8 +66,7 @@ class ProjectAgent:
 
     def load(self):
         if self.path is not None:
-            self.policy_network = DQN(self.state_dim, self.nb_neurons, self.nb_actions).to(device)
-            self.policy_network.load_state_dict(torch.load(self.path)).to(device)            
+            self.policy_network.load_state_dict(torch.load(self.path))           
         # self.train(epochs=10, max_episode=1000)
         # self.save('policy_network.pth')
     
