@@ -34,7 +34,7 @@ class ProjectAgent:
         self.epsilon_step = (self.epsilon_max-self.epsilon_min)/1000
         self.gamma = 0.95
         self.tau = 0.005
-        self.path = "/src/policy_network.pth"
+        self.path = "src/policy_network.pth"
         
         self.criterion = torch.nn.MSELoss()
         self.batch_size = 32
