@@ -7,7 +7,7 @@ import torch
 import torch.nn as nn
 from DQN import DQN
 from ReplayBuffer import ReplayBuffer
-from tqdm import tqdm
+# from tqdm import tqdm
 
 env = TimeLimit(
     env=HIVPatient(domain_randomization=False), max_episode_steps=200
@@ -89,7 +89,7 @@ class ProjectAgent:
         episode_cum_reward = 0
         state, _ = env.reset()
 
-        for episode in tqdm(range(max_episode)):
+        for episode in range(max_episode):
             epsilon = self.epsilon_max
             for t in range(max_episode_length):
                 if t > self.epsilon_delay:
