@@ -11,6 +11,8 @@ class DQN(nn.Module):
         self.main = nn.Sequential(nn.Linear(self.state_dim, self.nb_neurons),
                           nn.ReLU(),
                           nn.Linear(self.nb_neurons, self.nb_neurons),
+                          nn.ReLU(),
+                          nn.Linear(self.nb_neurons, self.nb_neurons),
                           nn.ReLU(), 
                           nn.Linear(self.nb_neurons, self.nb_actions))
 
