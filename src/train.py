@@ -7,7 +7,7 @@ import torch
 import torch.nn as nn
 from DQN import DQN
 from ReplayBuffer import ReplayBuffer
-from tqdm import tqdm
+# from tqdm import tqdm
 import os
 from copy import deepcopy
 
@@ -95,7 +95,7 @@ class ProjectAgent:
         step = 0
         epsilon = self.epsilon_max
 
-        for episode in tqdm(range(max_episode)):
+        for episode in range(max_episode):
             state, _ = env.reset()
             
             for _ in range(max_episode_length):                    
